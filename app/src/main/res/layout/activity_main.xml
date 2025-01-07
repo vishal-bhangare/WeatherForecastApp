@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/light_blue">
+
+    <EditText
+        android:id="@+id/et_city"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter city name"
+        android:background="@drawable/rounded_edittext"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_get_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Weather"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_weather_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weather info will be displayed here"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City:"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Temperature:"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_feels_like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Feels Like:"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weather:"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_humidity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Humidity:"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_wind_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wind Speed:"
+        android:padding="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+</LinearLayout>
+
+    <!-- Rounded background and button styles -->
+
+
