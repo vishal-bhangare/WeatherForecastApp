@@ -1,108 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/light_blue">
 
-    <EditText
-        android:id="@+id/et_city"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Enter city name"
-        android:background="@drawable/rounded_edittext"
-        android:padding="12dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:layout_marginBottom="16dp"/>
-
-    <Button
-        android:id="@+id/btn_get_weather"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="#F5F5F5">
+    <!-- Container for Input and Button -->
+    <LinearLayout
+        android:id="@+id/layout_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get Weather"
-        android:background="@drawable/rounded_button"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/tv_weather_result"
+        <EditText
+            android:id="@+id/et_city"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Enter city name"
+            android:background="@drawable/rounded_edittext"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_get_weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Weather"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+
+    <!-- Container for Weather Details -->
+    <LinearLayout
+        android:id="@+id/layout_weather_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Weather info will be displayed here"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        android:layout_marginBottom="8dp"
-        android:gravity="center_horizontal"/>
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/tv_city"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="City:"
-        android:padding="4dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New York"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"/>
 
-    <TextView
-        android:id="@+id/tv_temperature"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Temperature:"
-        android:padding="4dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/tv_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25°C"
+            android:textSize="64sp"
+            android:textColor="#FF4081"
+            app:layout_constraintTop_toBottomOf="@id/tv_city"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
 
-    <TextView
-        android:id="@+id/tv_feels_like"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Feels Like:"
-        android:padding="4dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_temperature"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
 
-    <TextView
-        android:id="@+id/tv_weather"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Weather:"
-        android:padding="4dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tv_humidity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Humidity:"
-        android:padding="4dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+                <TextView
+                    android:id="@+id/tv_feels_like"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like: 27°C"
+                    android:textSize="18sp"
+                    android:padding="8dp"/>
 
-    <TextView
-        android:id="@+id/tv_wind_speed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Wind Speed:"
-        android:padding="4dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp"/>
+                <TextView
+                    android:id="@+id/tv_weather"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weather: Sunny"
+                    android:textSize="18sp"
+                    android:padding="8dp"/>
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/tv_humidity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity: 65%"
+                    android:textSize="18sp"
+                    android:padding="8dp"/>
 
-    <!-- Rounded background and button styles -->
+                <TextView
+                    android:id="@+id/tv_wind_speed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Wind Speed: 12 km/h"
+                    android:textSize="18sp"
+                    android:padding="8dp"/>
 
+            </LinearLayout>
 
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
